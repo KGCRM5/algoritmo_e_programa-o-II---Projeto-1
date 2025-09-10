@@ -1,8 +1,6 @@
 /*Projeto 1 - Algoritmo e Programação II
 
 Grupo:
-
-oi
  
 - Klaus Gustavo Castelein Ricieri Moura - 10735808
 - Bruno Matheus Garutti Pinto - 10736747
@@ -48,5 +46,6 @@ int main(){
     }
 
 }
+
 
 
