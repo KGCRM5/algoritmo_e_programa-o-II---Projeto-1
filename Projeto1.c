@@ -36,7 +36,7 @@ int main() {
             printf("Digite o valor de x: ");
             scanf("%d", &x);
             valor = calcularValor(p1_coefs, p1_exps, p1_grau, x);
-            printf("\nO valor do polinomio P(x) e: %.2d\n", valor);
+            printf("\nO valor do polinomio P(x) e: %d\n", valor);
 
         } else if (opcao == 2) {
             printf("\n--- Somar Polinomios ---\n");
