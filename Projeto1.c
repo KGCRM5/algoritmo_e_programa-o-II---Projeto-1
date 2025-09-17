@@ -168,3 +168,4 @@ void multiplicarPolinomios(double coeficientes1[], int expoentes1[], int grau1, 
         }
     }
 }
+
