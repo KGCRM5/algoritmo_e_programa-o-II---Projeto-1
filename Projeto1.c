@@ -1,16 +1,15 @@
 /*Projeto 1 - Algoritmo e Programação II
 
 Grupo:
- 
 - Klaus Gustavo Castelein Ricieri Moura - 10735808
 - Bruno Matheus Garutti Pinto - 10736747
-
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
+//Chamada das funções declaradas depois da main
 void menu();
 void lerPolinomio(double coeficientes[], int expoentes[], int *grau);
 void imprimirPolinomio(double coeficientes[], int expoentes[], int grau);
@@ -25,6 +24,7 @@ int main() {
     int p1_grau, p2_grau, resultado_grau;
     double x, valor;
 
+    //Chama o menu ao menos uma vez, até que o usuário escolha sair (opção 0)
     do {
         menu();
         printf("\nEscolha uma opcao: ");
@@ -42,10 +42,8 @@ int main() {
             printf("\n--- Somar Polinomios ---\n");
             printf("Polinomio 1:\n");
             lerPolinomio(p1_coefs, p1_exps, &p1_grau);
-
             printf("Polinomio 2:\n");
             lerPolinomio(p2_coefs, p2_exps, &p2_grau);
-
             somarPolinomios(p1_coefs, p1_exps, p1_grau, p2_coefs, p2_exps, p2_grau, resultado_coefs, resultado_exps, &resultado_grau);
             printf("\nO polinomio resultado da soma e: ");
             imprimirPolinomio(resultado_coefs, resultado_exps, resultado_grau);
@@ -54,19 +52,17 @@ int main() {
             printf("\n--- Multiplicar Polinomios ---\n");
             printf("Polinomio 1:\n");
             lerPolinomio(p1_coefs, p1_exps, &p1_grau);
-
             printf("Polinomio 2:\n");
             lerPolinomio(p2_coefs, p2_exps, &p2_grau);
-
             multiplicarPolinomios(p1_coefs, p1_exps, p1_grau, p2_coefs, p2_exps, p2_grau, resultado_coefs, resultado_exps, &resultado_grau);
             printf("\nO polinomio resultado da multiplicacao e: ");
             imprimirPolinomio(resultado_coefs, resultado_exps, resultado_grau);
 
         } else if (opcao == 0) {
-            printf("\nSaindo da calculadora. Ate logo!\n");
+            printf("\nSaindo da calculadora.\n");
 
         } else {
-            printf("\nOpcao invalida. Por favor, tente novamente.\n");
+            printf("\nOpcao invalida. Tente novamente.\n");
 
         }
 
@@ -104,7 +100,8 @@ void lerPolinomio(double coeficientes[], int expoentes[], int *grau) {
 void imprimirPolinomio(double coeficientes[], int expoentes[], int grau) {
     int i;
     printf("P(x) = ");
-    int primeiroTermo = 1;
+    int primeiroTermo = 1; //Garante que não tenha um sinal de soma antes do primeiro termo
+    
     for (i = grau; i >= 0; i--) {
         if (coeficientes[i] != 0) {
             if (!primeiroTermo && coeficientes[i] > 0) {
@@ -134,6 +131,8 @@ double calcularValor(double coeficientes[], int expoentes[], int grau, double x)
 
 void somarPolinomios(double coeficientes1[], int expoentes1[], int grau1, double coeficientes2[], int expoentes2[], int grau2, double resultadoCoeficientes[], int resultadoExpoentes[], int *resultadoGrau) {
     int i;
+
+    //Utiliza o polinomio de maior grau como referência para o resultado
     if (grau1 > grau2) {
         *resultadoGrau = grau1;
     } else {
@@ -145,6 +144,7 @@ void somarPolinomios(double coeficientes1[], int expoentes1[], int grau1, double
         resultadoExpoentes[i] = i;
     }
 
+    //Soma os coeficientes dos dois polinomios ao resultado
     for (i = 0; i <= grau1; i++) {
         resultadoCoeficientes[i] += coeficientes1[i];
     }
