@@ -6,10 +6,9 @@ O programa permite calcular o valor de um polinômio em um ponto, somar polinôm
 ---
 
 # Integrantes do Grupo
+**Turma 02P**
 - Klaus Gustavo Castelein Ricieri Moura - 10735808  
 - Bruno Matheus Garutti Pinto - 10736747
-
-**Turma 02P**
 ---
 
 # Funcionalidades
