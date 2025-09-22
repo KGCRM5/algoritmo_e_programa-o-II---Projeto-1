@@ -9,7 +9,7 @@ Grupo:
 #include <stdlib.h>
 #include <math.h>
 
-//Chamada das funções declaradas depois da main
+//Chamada das funções que foram declaradas depois da main
 void menu();
 void lerPolinomio(int coeficientes[], int expoentes[], int *grau);
 void imprimirPolinomio(int coeficientes[], int expoentes[], int grau);
@@ -24,8 +24,7 @@ int main() {
     int p1_grau, p2_grau, resultado_grau;
     int x, valor;
 
-    //Chama o menu ao menos uma vez, até que o usuário escolha sair (opção 0)
-    do {
+    do { //Chama o menu ao menos uma vez, até que o usuário escolha sair (opção 0)
         menu();
         printf("\nEscolha uma opcao: ");
         scanf("%d", &opcao);
@@ -36,7 +35,7 @@ int main() {
             printf("Digite o valor de x: ");
             scanf("%d", &x);
             valor = calcularValor(p1_coefs, p1_exps, p1_grau, x);
-            printf("\nO valor do polinomio P(x) e: %d\n", valor);
+            printf("\nO valor do polinomio P(x) e: %.2d\n", valor);
 
         } else if (opcao == 2) {
             printf("\n--- Somar Polinomios ---\n");
@@ -85,7 +84,7 @@ void lerPolinomio(int coeficientes[], int expoentes[], int *grau) {
     printf("Digite o grau do polinomio (maximo 10): ");
     scanf("%d", grau);
 
-    if (*grau > 10) {
+    if (*grau > 10) { //Define o limite do grau do polinômio como 10 (para não ficar tão extenso)
         printf("Grau muito alto. Usando o grau maximo.\n");
         *grau = 10;
     }
@@ -100,28 +99,28 @@ void lerPolinomio(int coeficientes[], int expoentes[], int *grau) {
 void imprimirPolinomio(int coeficientes[], int expoentes[], int grau) {
     int i;
     printf("P(x) = ");
-    int primeiroTermo = 1; //Garante que não tenha um sinal de soma antes do primeiro termo
+    int primeiroTermo = 1; 
     
     for (i = grau; i >= 0; i--) {
         if (coeficientes[i] != 0) {
-            if (!primeiroTermo && coeficientes[i] > 0) { //Para os termos após o primeiro
+            if (!primeiroTermo && coeficientes[i] > 0) { //Para que antes do primeiro termo não tenha sinal de soma `+`
                 printf(" + ");
             }
             if (expoentes[i] > 1) {
                 printf("%dx^%d ", coeficientes[i], expoentes[i]);
             } else if (expoentes[i] == 1) {
-                printf("x", coeficientes[i]);
+                printf("%dx", coeficientes[i]);
             } else { //Para o termo independente
                 printf("%d", coeficientes[i]);
             }
-            primeiroTermo = 0;
+            primeiroTermo = 0; //Os próximos termos terão sinal de soma `+`
         }
     }
     printf("\n");
 }
 
 int calcularValor(int coeficientes[], int expoentes[], int grau, int x) {
-    int resultado = 0;
+    int resultado = 0; 
     int i;
     for (i = 0; i <= grau; i++) {
         resultado += coeficientes[i] * pow(x, expoentes[i]);
@@ -155,7 +154,7 @@ void somarPolinomios(int coeficientes1[], int expoentes1[], int grau1, int coefi
 
 void multiplicarPolinomios(int coeficientes1[], int expoentes1[], int grau1, int coeficientes2[], int expoentes2[], int grau2, int resultadoCoeficientes[], int resultadoExpoentes[], int *resultadoGrau) {
     int i, j;
-    *resultadoGrau = grau1 + grau2;
+    *resultadoGrau = grau1 + grau2; //Por ser multiplicação, soma-se os maiores expoentes
 
     for (i = 0; i <= *resultadoGrau; i++) {
         resultadoCoeficientes[i] = 0;                 
