@@ -16,7 +16,7 @@ O programa permite calcular o valor de um polinômio em um ponto, somar polinôm
 O programa apresenta um menu interativo com as seguintes opções:
 
 1. **Calcular o valor de um polinômio**  
-   - O usuário informa o grau do polinômio, seus coeficientes e o valor de `x`.  
+   - O usuário informa o grau do polinômio, seus coeficientes e o valor de x.  
    - O programa retorna o valor numérico resultante.  
 
 2. **Somar dois polinômios**  
@@ -29,8 +29,3 @@ O programa apresenta um menu interativo com as seguintes opções:
 
 0. **Sair**  
    - Encerra o programa.  
-
----
-
-# Exemplo de Execução
-
