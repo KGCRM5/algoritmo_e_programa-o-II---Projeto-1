@@ -1,13 +1,13 @@
 # Calculadora de Polinômios em C
 
 Projeto desenvolvido para a disciplina **Algoritmo e Programação II**, com o objetivo de implementar uma calculadora capaz de manipular polinômios.  
-O programa permite **calcular o valor de um polinômio em um ponto**, **somar polinômios** e **multiplicar polinômios**, utilizando apenas recursos básicos da linguagem C.
+O programa permite calcular o valor de um polinômio em um ponto, somar polinômios e multiplicar polinômios, utilizando apenas recursos básicos da linguagem C.
 
 ---
 
 # Integrantes do Grupo
-- **Klaus Gustavo Castelein Ricieri Moura** - 10735808  
-- **Bruno Matheus Garutti Pinto** - 10736747  
+- Klaus Gustavo Castelein Ricieri Moura - 10735808  
+- Bruno Matheus Garutti Pinto - 10736747  
 
 ---
 
@@ -32,5 +32,5 @@ O programa apresenta um menu interativo com as seguintes opções:
 
 ---
 
-## 🖥️ Exemplo de Execução
+# Exemplo de Execução
 
